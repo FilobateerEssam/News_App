@@ -1,8 +1,12 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/Components/Category_card.dart';
 import 'package:news_app/Components/News_Tile.dart';
+import 'package:news_app/Models/article_model.dart';
+import 'package:news_app/Services/news_Services.dart';
 import 'package:news_app/Views/Categories_ListView.dart';
 import 'package:news_app/Views/News_ListView.dart';
+import 'package:news_app/Views/News_ListViewBulider.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -42,7 +46,7 @@ class Homepage extends StatelessWidget {
                   height: 32,
                 ),
               ),
-              News_ListView(),
+              New_ListViewBuilder(),
             ],
           )
           // Column(

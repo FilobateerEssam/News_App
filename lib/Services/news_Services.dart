@@ -7,7 +7,8 @@ class NewsServices {
   NewsServices(this.dio);
 
   Future<List<ArticleModel>> getNews() async {
-    return await Future.delayed(const Duration(seconds: 3), () async {
+    
+    try {
       Response response = await dio.get(
           'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=4a9d22b0f56c4cb195b65a2a5fdac802');
 
@@ -29,6 +30,9 @@ class NewsServices {
       }
       print(articlesList);
       return articlesList;
-    });
+    } catch (e) {
+      // TODO
+      return [];
+    }
   }
 }
